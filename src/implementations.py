@@ -65,8 +65,8 @@ def logistic_regression(y, tx, initial_w, max_iters, gamma):
     grad = (-1/N) * (tx.T @ e)
     w = w - (gamma * grad)
 
-  e = y - sigmoid(tx @ w)
-  loss = 1/2 * (e ** 2).mean()
+  pred = sigmoid(tx @ w)
+  loss = (-y*np.log(pred) - (1-y)*np.log(1 - pred)).mean()
   return (w, loss)
 
 def reg_logistic_regression(y, tx, lambda_, initial_w, max_iters, gamma):
@@ -75,9 +75,9 @@ def reg_logistic_regression(y, tx, lambda_, initial_w, max_iters, gamma):
 
   for _ in range(max_iters):
     e = y - sigmoid(tx @ w)
-    grad = (-1/N) * ((tx.T @ e) + (lambda_ * np.linalg.norm(w)))
+    grad = (-1/N) * (tx.T @ e) + 2 * lambda_ * w
     w = w - (gamma * grad)
 
-  e = y - sigmoid(tx @ w)
-  loss = 1/2 * (e ** 2).mean()
+  pred = sigmoid(tx.dot(w))
+  loss = (-y*np.log(pred) - (1-y)*np.log(1 - pred)).mean() + lambda_ * np.linalg.norm(w)**2
   return (w, loss)
