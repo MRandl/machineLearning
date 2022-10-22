@@ -135,5 +135,5 @@ def reg_logistic_regression(y, tx, lambda_, initial_w, max_iters, gamma):
     pred = sigmoid(tx.dot(w))
     loss = (
         -y * np.log(pred) - (1 - y) * np.log(1 - pred)
-    ).mean() + lambda_ * np.linalg.norm(w) ** 2
+    ).mean()
     return (w, loss)
