@@ -10,7 +10,7 @@ def mean_squared_error_gd(y, tx, initial_w, max_iters, gamma):
     tx -- array of features for each datapoint
     initial_w -- initial weights from which we start the GD
     max_iters -- the amount of iterations we perform
-    gamma -- the GD step size 
+    gamma -- the GD step size
     """
     w = initial_w
     N = tx.shape[0]
@@ -34,7 +34,7 @@ def mean_squared_error_sgd(y, tx, initial_w, max_iters, gamma):
     tx -- array of features for each datapoint
     initial_w -- initial weights from which we start the SGD
     max_iters -- the amount of iterations we perform
-    gamma -- the GD step size 
+    gamma -- the GD step size
     """
     w = initial_w
     N = tx.shape[0]
