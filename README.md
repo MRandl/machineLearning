@@ -9,4 +9,4 @@ The helpers are the ones provided and are not modified.
 
 ### The implementation
 
-The implementation we display here replaces the unseen data by the mean of the columns, and expands both polynomially, using a sine function and a log. Further details are in the report.
+The implementation we display here replaces the undefined data by the mean of the columns, and expands both polynomially, using a sine and a log function. Further details are in the report.
